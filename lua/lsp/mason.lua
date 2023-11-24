@@ -8,6 +8,7 @@ local PLUG = {
 function PLUG.config()
   local mason = require("mason")
   local masonlspconfig = require("mason-lspconfig")
+  local icons = require('core.icons')
 
   local servers = {
     'html',
@@ -22,13 +23,14 @@ function PLUG.config()
     'vimls'
   }
 
+  local im = icons.mason
   local settings = {
     ui = {
       border = "none",
       icons = {
-        package_installed = "",
-        package_pending = "",
-        package_uninstalled = "",
+        package_installed = im.package_installed,
+        package_pending = im.package_pending,
+        package_uninstalled = im.package_uninstalled,
       },
     },
     log_level = vim.log.levels.INFO,

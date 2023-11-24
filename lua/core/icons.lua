@@ -3,6 +3,7 @@ return {
     select = "",
     find = " 󰍉"
   },
+
   nvimtree = {
     GlyphDefault = "",
     GlyphSymlink = "",
@@ -12,6 +13,7 @@ return {
     empty_open = "",
     symlink = "",
   },
+
   git = {
     unstaged = "",
     staged = "S",
@@ -21,6 +23,7 @@ return {
     untracked = "U",
     ignored = "◌",
   },
+
   kind_icons = {
     Text = "󰉿",
     Method = "",
@@ -49,12 +52,14 @@ return {
     TypeParameter = " ",
     Misc = "",
   },
+
   signs = {
     Error = "󰅙 ",
     Warn = " ",
     Hint = "󰌵",
     Info = " ",
   },
+
   lspsaga = {
     error_sign = "",
     warn_sign = "",
@@ -65,5 +70,11 @@ return {
     finder_reference_icon = "  ",
     definition_preview_icon = "  ",
     rename_prompt_prefix = "➤",
+  },
+
+  mason = {
+    package_installed = "",
+    package_pending = "",
+    package_uninstalled = "",
   }
 }
