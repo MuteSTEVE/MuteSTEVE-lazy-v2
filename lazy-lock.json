@@ -29,6 +29,7 @@
   "promise-async": { "branch": "main", "commit": "e94f35161b8c5d4a4ca3b6ff93dd073eb9214c0e" },
   "rainbow-delimiters.nvim": { "branch": "master", "commit": "a2da59bdacb5e3a28873ac7039a16271ac16b224" },
   "telescope.nvim": { "branch": "master", "commit": "18774ec7929c8a8003a91e9e1f69f6c32258bbfe" },
+  "toggleterm.nvim": { "branch": "main", "commit": "fb0c365534e7ee327b30205beff3f3a708dcba33" },
   "vscode-react-javascript-snippets": { "branch": "master", "commit": "185bb91a0b692c54136663464e8225872c434637" },
   "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
 }
