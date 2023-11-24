@@ -22,6 +22,7 @@ return {
     deleted = "",
     untracked = "U",
     ignored = "◌",
+    signs = "▌"
   },
 
   kind_icons = {
