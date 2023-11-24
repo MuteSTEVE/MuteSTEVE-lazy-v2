@@ -1,6 +1,6 @@
 local PLUG = {
   'jose-elias-alvarez/null-ls.nvim',
-  event = { "BufReadPost", "BufNewFile", "InsertEnter" },
+  event = { "BufReadPost", "BufNewFile", },
 }
 
 function PLUG.config()

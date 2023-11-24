@@ -2,9 +2,6 @@ local PLUG = {
   'nvim-lualine/lualine.nvim',
   dependencies = 'kyazdani42/nvim-web-devicons',
   event = { "BufReadPost", "BufNewFile", "InsertEnter" },
-  config = function()
-    vim.cmd("set laststatus=3")
-  end
 }
 
 function PLUG.config()
@@ -47,6 +44,7 @@ function PLUG.config()
     sources = { 'nvim_diagnostic' },
     symbols = { error = icons.signs.Error, warn = icons.signs.Warn, info = icons.signs.Info },
   }
+
 end
 
 return PLUG

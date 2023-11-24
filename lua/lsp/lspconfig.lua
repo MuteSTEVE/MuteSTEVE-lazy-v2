@@ -1,6 +1,6 @@
 local PLUG = {
   'neovim/nvim-lspconfig',
-  event = { "BufReadPost", "BufNewFile", "InsertEnter" },
+  event = { "BufReadPost", "BufNewFile", },
 }
 
 function PLUG.config()

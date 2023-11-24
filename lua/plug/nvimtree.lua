@@ -2,7 +2,8 @@ local PLUG = {
   'nvim-tree/nvim-tree.lua',
   dependencies = 'kyazdani42/nvim-web-devicons',
   lazy = true,
-  event = "VeryLazy"
+  event = "VeryLazy",
+  keys = { "<leader>n", "<cmd>NvimTreeFindFileToggle<cr>" }
 }
 
 function PLUG.config()
@@ -59,6 +60,8 @@ function PLUG.config()
       }
     }
   }
+
+  vim.keymap.set("n", "<leader>n", "<cmd>NvimTreeFindFileToggle<cr>", {silent = true})
 end
 
 return PLUG

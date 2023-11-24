@@ -1,7 +1,7 @@
 local PLUG = {
   'kkharji/lspsaga.nvim',
   lazy = true,
-  event = { "BufReadPost", "BufNewFile", "InsertEnter" },
+  event = { "BufReadPost", "BufNewFile", },
   cmd = "Lspsaga"
 }
 
