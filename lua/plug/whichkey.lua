@@ -90,7 +90,7 @@ function PLUG.config()
       "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
       "Buffers",
     },
-    n = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+    n = { "<cmd>NvimTreeFindFileToggle<cr>", "Explorer" },
     w = { "<cmd>w!<CR>", "Save" },
     S = { "<cmd>so %<cr>", "Source the config" },
     q = { "<cmd>q!<CR>", "Quit" },

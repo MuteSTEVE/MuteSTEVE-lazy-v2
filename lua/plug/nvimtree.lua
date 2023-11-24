@@ -2,8 +2,7 @@ local PLUG = {
   'nvim-tree/nvim-tree.lua',
   dependencies = 'kyazdani42/nvim-web-devicons',
   lazy = true,
-  cmd = "NvimTree",
-  keys = { "<leader>n", "<cmd>NvimTeeFindFileToggle<cr>", desc = "Nvimtree" }
+  event = "VeryLazy"
 }
 
 function PLUG.config()
