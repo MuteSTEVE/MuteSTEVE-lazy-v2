@@ -8,6 +8,14 @@ local PLUG = {
     { 'hrsh7th/cmp-nvim-lsp', event = "InsertEnter" },
     { 'hrsh7th/cmp-nvim-lua', event = "InsertEnter" },
     { 'saadparwaiz1/cmp_luasnip', event = "InsertEnter" },
+    {
+      'L3MON4D3/LuaSnip',
+      'rafamadriz/friendly-snippets',
+      {
+        'ults-io/vscode-react-javascript-snippets',
+        build = 'yarn install --frozen-lockfile && yarn compile',
+      },
+    }
   },
 }
 
@@ -155,7 +163,6 @@ function PLUG.config()
   })
 
   vim.cmd("highlight Pmenu guibg=NONE")
-
 end
 
 return PLUG

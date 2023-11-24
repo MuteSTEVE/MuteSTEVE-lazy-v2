@@ -8,7 +8,6 @@ local PLUG = {
 function PLUG.config()
   local mason = require("mason")
   local masonlspconfig = require("mason-lspconfig")
-  local icons = require('core.icons')
 
   local servers = {
     'html',
@@ -23,6 +22,7 @@ function PLUG.config()
     'vimls'
   }
 
+  local icons = require('core.icons')
   local im = icons.mason
   local settings = {
     ui = {
