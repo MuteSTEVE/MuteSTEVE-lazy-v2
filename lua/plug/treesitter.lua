@@ -3,14 +3,12 @@ local PLUG = {
   event = { "BufReadPost", "BufNewFile" },
   build = ":TSUpdate",
   dependencies = {
-    { 'windwp/nvim-ts-autotag', event = "VeryLazy" },
-    { 'HiPhish/nvim-ts-rainbow2', event = "VeryLazy" },
-    { 'windwp/nvim-autopairs', event = "InsertEnter" }
+    { 'windwp/nvim-ts-autotag',  event = { "BufReadPost", "BufNewFile" }, },
+    { 'windwp/nvim-autopairs', event = { "BufReadPost", "BufNewFile" }, }
   }
 }
 
 function PLUG.config()
-  local rainbow = require('ts-rainbow')
   require("nvim-treesitter.configs").setup {
     ensure_installed = { "java", "bash", "c", "html", "php", "phpdoc", "css", "javascript", "lua", "vim" },
     sync_install = true,
@@ -20,12 +18,6 @@ function PLUG.config()
     },
     autotag = {
       enable = true,
-    },
-    rainbow = {
-      enable = true,
-      disable = { 'jsx', 'cpp' },
-      query = 'rainbow-parens',
-      strategy = rainbow.strategy.global,
     },
     autopairs = {
       enable = true,

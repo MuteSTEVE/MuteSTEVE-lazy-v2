@@ -8,12 +8,13 @@ local PLUG = {
 function PLUG.config()
   local telescope = require("telescope")
   local actions = require("telescope.actions")
-  local icon = require('core.icon')
+  local icons = require('core.icons')
+  local it = icons.telescope
 
   telescope.setup {
     defaults = {
-      prompt_prefix = icon.telescope.find .. " ",
-      selection_caret = icon.telescope.select .. " ",
+      prompt_prefix = it.find .. " ",
+      selection_caret = it.select .. " ",
       mappings = {
         i = {
           ["<C-j>"] = actions.move_selection_next,

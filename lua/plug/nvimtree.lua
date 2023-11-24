@@ -8,7 +8,9 @@ local PLUG = {
 
 function PLUG.config()
   local nvimtree = require("nvim-tree")
-  local icon = require('core.icon')
+  local icons = require('core.icons')
+  local inv = icons.nvimtree
+  local igit = icons.git
 
   nvimtree.setup {
     disable_netrw = true,
@@ -36,23 +38,23 @@ function PLUG.config()
           git = true,
         },
         glyphs = {
-          default = icon.nvimtree.GlyphDefault,
-          symlink = icon.nvimtree.GlyphSymlink,
+          default = inv.GlyphDefault,
+          symlink = inv.GlyphSymlink,
           git = {
-            unstaged = icon.git.unstaged,
-            staged = icon.git.staged,
-            unmerged = icon.git.unmerged,
-            renamed = icon.git.renamed,
-            deleted = icon.git.deleted,
-            untracked = icon.git.untracked,
-            ignored = icon.git.ignored,
+            unstaged = igit.unstaged,
+            staged = igit.staged,
+            unmerged = igit.unmerged,
+            renamed = igit.renamed,
+            deleted = igit.deleted,
+            untracked = igit.untracked,
+            ignored = igit.ignored,
           },
           folder = {
-            default = icon.nvimtree.default,
-            open = icon.nvimtree.open,
-            empty = icon.nvimtree.empty,
-            empty_open = icon.nvimtree.empty_open,
-            symlink = icon.nvimtree.symlink,
+            default = inv.default,
+            open = inv.open,
+            empty = inv.empty,
+            empty_open = inv.empty_open,
+            symlink = inv.symlink,
           },
         }
       }
