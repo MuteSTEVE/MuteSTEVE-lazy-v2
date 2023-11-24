@@ -2,10 +2,7 @@ local PLUG = {
   'nvim-treesitter/nvim-treesitter',
   event = { "BufReadPost", "BufNewFile" },
   build = ":TSUpdate",
-  dependencies = {
-    { 'windwp/nvim-ts-autotag',  event = { "BufReadPost", "BufNewFile" }, },
-    { 'windwp/nvim-autopairs', event = { "BufReadPost", "BufNewFile" }, }
-  }
+  dependencies = { 'windwp/nvim-ts-autotag',  event = { "BufReadPost", "BufNewFile" }, },
 }
 
 function PLUG.config()

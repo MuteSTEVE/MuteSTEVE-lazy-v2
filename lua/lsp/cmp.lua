@@ -1,21 +1,13 @@
 local PLUG = {
   'hrsh7th/nvim-cmp',
-  event = { "BufReadPost", "BufNewFile", "InsertEnter" },
+  event = "InsertEnter",
   dependencies = {
-    { 'hrsh7th/cmp-buffer', event = { "BufReadPost", "BufNewFile", "InsertEnter" }, },
-    { 'hrsh7th/cmp-path', event = { "BufReadPost", "BufNewFile", "InsertEnter" }, },
-    { 'hrsh7th/cmp-cmdline', event = { "BufReadPost", "BufNewFile", "InsertEnter" }, },
-    { 'hrsh7th/cmp-nvim-lsp', event = { "BufReadPost", "BufNewFile", "InsertEnter" }, },
-    { 'hrsh7th/cmp-nvim-lua', event = { "BufReadPost", "BufNewFile", "InsertEnter" }, },
-    { 'saadparwaiz1/cmp_luasnip', event = { "BufReadPost", "BufNewFile", "InsertEnter" }, },
-    {
-      'L3MON4D3/LuaSnip',
-      'rafamadriz/friendly-snippets',
-      {
-        'ults-io/vscode-react-javascript-snippets',
-        build = 'yarn install --frozen-lockfile && yarn compile',
-      },
-    }
+    { 'hrsh7th/cmp-buffer', event = "InsertEnter" },
+    { 'hrsh7th/cmp-path', event = "InsertEnter" },
+    { 'hrsh7th/cmp-cmdline', event = "InsertEnter" },
+    { 'hrsh7th/cmp-nvim-lsp', event = "InsertEnter" },
+    { 'hrsh7th/cmp-nvim-lua', event = "InsertEnter" },
+    { 'saadparwaiz1/cmp_luasnip', event = "InsertEnter" },
   },
 }
 
@@ -161,6 +153,8 @@ function PLUG.config()
         }
       })
   })
+
+  vim.cmd("highlight Pmenu guibg=NONE")
 
 end
 

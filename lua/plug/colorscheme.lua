@@ -2,9 +2,6 @@ local PLUG = {
   'navarasu/onedark.nvim',
   lazy = false,
   priority = 1000,
-  init = function()
-    vim.cmd('colorscheme onedark')
-  end
 }
 
 function PLUG.config()
@@ -30,6 +27,7 @@ function PLUG.config()
   })
 
   onedark.load()
+  vim.cmd('colorscheme onedark')
 end
 
 return PLUG
