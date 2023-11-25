@@ -4,10 +4,7 @@ local PLUG = {
 }
 
 function PLUG.config()
-  local comment_ok, comment = pcall(require, 'nvim_comment')
-  if not comment_ok then
-    return
-  end
+  local comment = require("nvim_comment")
 
   comment.setup({
     comment_empty = false,

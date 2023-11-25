@@ -22,7 +22,7 @@ map('v', 'J', "<cmd>move '>+1<CR>gv-gv", opt)
 -- buffer movement
 map('n', 'Z', '<cmd>bp<CR>', opt)
 map('n', 'C', '<cmd>bn<CR>', opt)
-map('n', 'X', '<cmd>bd<CR>', opt)
+map('n', 'X', '<cmd>x<CR>', opt)
 
 -- Move between panes quickly
 map('n', '<C-h>', '<C-w>h', optf)

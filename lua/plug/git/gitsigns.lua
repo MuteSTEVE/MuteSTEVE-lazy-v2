@@ -4,14 +4,8 @@ local PLUG = {
 }
 
 function PLUG.config()
-  local gitsigns_ok, gitsigns = pcall(require, "gitsigns")
-  if not gitsigns_ok then
-    return
-  end
-  local icons_ok, icons = pcall(require, "core.icons")
-  if not icons_ok then
-    return
-  end
+  local gitsigns = require("gitsigns")
+  local icons = require('core.icons')
   local igit = icons.git
 
   gitsigns.setup {

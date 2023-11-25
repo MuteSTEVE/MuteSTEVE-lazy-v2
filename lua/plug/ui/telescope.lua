@@ -7,18 +7,9 @@ local PLUG = {
 }
 
 function PLUG.config()
-  local telescope_ok, telescope = pcall(require, 'telescope')
-  if not telescope_ok then
-    return
-  end
-  local actions_ok, actions = pcall(require, 'telescope.actions')
-  if not actions_ok then
-    return
-  end
-  local icons_ok, icons = pcall(require, "core.icons")
-  if not icons_ok then
-    return
-  end
+  local telescope = require("telescope")
+  local actions = require("telescope.actions")
+  local icons = require('core.icons')
   local it = icons.telescope
 
   telescope.setup {

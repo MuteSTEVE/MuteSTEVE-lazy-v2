@@ -4,10 +4,7 @@ local PLUG = {
 }
 
 function PLUG.config()
-  local status_ok, which_key = pcall(require, "which-key")
-  if not status_ok then
-    return
-  end
+  local which_key = require("which-key")
 
   local setup = {
     plugins = {
