@@ -27,7 +27,6 @@ function PLUG.config()
   })
 
   onedark.load()
-  vim.cmd('colorscheme onedark')
 end
 
 return PLUG

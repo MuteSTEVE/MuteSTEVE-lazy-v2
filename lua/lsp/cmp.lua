@@ -172,8 +172,6 @@ function PLUG.config()
         }
       })
   })
-
-  vim.cmd("highlight Pmenu guibg=NONE")
 end
 
 return PLUG
