@@ -5,8 +5,14 @@ local PLUG = {
 }
 
 function PLUG.config()
-  local lualine = require("lualine")
-  local icons = require('core.icons')
+  local lualine_ok, lualine = pcall(require, 'lualine')
+  if not lualine_ok then
+    return
+  end
+  local icons_ok, icons = pcall(require, "core.icons")
+  if not icons_ok then
+    return
+  end
 
   local ic = icons.lualine
   local progress_bar = function()

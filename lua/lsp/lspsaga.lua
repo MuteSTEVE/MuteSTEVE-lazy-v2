@@ -6,8 +6,14 @@ local PLUG = {
 }
 
 function PLUG.config()
-  local lspsaga = require("lspsaga")
-  local icons = require('core.icons')
+  local lspsaga_ok, lspsaga = pcall(require, "lspsaga")
+  if not lspsaga_ok then
+    return
+  end
+  local icons_ok, icons = pcall(require, 'core.icons')
+  if not icons_ok then
+    return
+  end
   local icl = icons.lspsaga
 
   lspsaga.setup { -- defaults ...

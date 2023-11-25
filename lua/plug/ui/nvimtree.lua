@@ -7,8 +7,14 @@ local PLUG = {
 }
 
 function PLUG.config()
-  local nvimtree = require("nvim-tree")
-  local icons = require('core.icons')
+  local nvimtree_ok, nvimtree = pcall(require, "nvim-tree")
+  if not nvimtree_ok then
+    return
+  end
+  local icons_ok, icons = pcall(require, "core.icons")
+  if not icons_ok then
+    return
+  end
   local inv = icons.nvimtree
   local igit = icons.git
 
