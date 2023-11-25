@@ -18,6 +18,26 @@ function PLUG.config()
     return chars[index]
   end
 
+  local mode_map = {
+    ['NORMAL'] = ' NORMAL',
+    ['O-PENDING'] = ' 0-PENDING',
+    ['INSERT'] = ' INSERT',
+    ['VISUAL'] = ' VISUAL',
+    ['V-BLOCK'] = ' V-BLOCK',
+    ['V-LINE'] = ' V-LINE',
+    ['V-REPLACE'] = ' V-REPLACE',
+    ['REPLACE'] = ' REPLACE',
+    ['COMMAND'] = ' COMMAND',
+    ['SHELL'] = ' SHELL',
+    ['TERMINAL'] = ' TERMINAL',
+    ['EX'] = ' EX',
+    ['S-BLOCK'] = ' S-BLOCK',
+    ['S-LINE'] = ' S-LINE',
+    ['SELECT'] = ' SELECT',
+    ['CONFIRM'] = ' CONFIRM',
+    ['MORE'] = ' MORE',
+  }
+
   local is = icons.signs
   lualine.setup {
     options = {
@@ -28,7 +48,7 @@ function PLUG.config()
       transparent = true,
     },
     sections = {
-      lualine_a = {'filename',},
+      lualine_a = { {'mode', fmt = function(s) return mode_map[s] or s end} },
       lualine_b = {'branch', 'diff', 'diagnostics'},
       lualine_x = {
         'encoding',
@@ -37,10 +57,6 @@ function PLUG.config()
       },
       lualine_y = {'progress'},
       lualine_z = {progress_bar}
-    },
-    inactive_sections = {
-      lualine_c = {'filename'},
-      lualine_x = {'location'},
     },
     sources = { 'nvim_diagnostic' },
     symbols = { error = is.Error, warn = is.Warn, info = is.Info },

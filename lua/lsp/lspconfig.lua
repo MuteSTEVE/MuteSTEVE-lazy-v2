@@ -68,7 +68,7 @@ function PLUG.config()
         options = {
           ["bem.enabled"] = true,
         },
-      },
+      }
     }
   }
 

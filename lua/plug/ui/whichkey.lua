@@ -85,6 +85,7 @@ function PLUG.config()
     u = { "<cmd>lua require('undotree').toggle()<cr>", "Undotree" },
     x = { "<cmd>!chmod +x %<CR>", "Make executable"  },
     m = { "<cmd>Ncmpcpp<cr>", "Ncmpcpp mpd" },
+    M = { "<cmd>Mason<cr>", "Mason LSP"},
     g = { "<cmd>LazyGit<cr>", "LazyGit" },
     b = {
       "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",

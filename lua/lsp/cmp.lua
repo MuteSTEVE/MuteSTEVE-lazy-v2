@@ -32,6 +32,7 @@ function PLUG.config()
   if not icons_ok then
     return
   end
+  require("luasnip/loaders/from_vscode").lazy_load()
 
   local check_backspace = function()
     local col = vim.fn.col "." - 1
@@ -113,8 +114,8 @@ function PLUG.config()
   }
 
   local sources = {
-    { name = "nvim_lsp" },
     { name = "luasnip" },
+    { name = "nvim_lsp" },
     { name = "buffer" },
     { name = "path" },
   }
