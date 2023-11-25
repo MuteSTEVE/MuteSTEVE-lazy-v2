@@ -8,7 +8,7 @@ function PLUG.config()
   local lualine = require("lualine")
   local icons = require('core.icons')
 
-  local ic = icons.chars
+  local ic = icons.lualine
   local progress_bar = function()
     local current_line = vim.fn.line(".")
     local total_lines = vim.fn.line("$")
@@ -18,6 +18,7 @@ function PLUG.config()
     return chars[index]
   end
 
+  local is = icons.signs
   lualine.setup {
     options = {
       icons_enabled = true,
@@ -42,9 +43,8 @@ function PLUG.config()
       lualine_x = {'location'},
     },
     sources = { 'nvim_diagnostic' },
-    symbols = { error = icons.signs.Error, warn = icons.signs.Warn, info = icons.signs.Info },
+    symbols = { error = is.Error, warn = is.Warn, info = is.Info },
   }
-
 end
 
 return PLUG

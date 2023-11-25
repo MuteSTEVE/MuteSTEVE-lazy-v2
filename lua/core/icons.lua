@@ -77,5 +77,17 @@ return {
     package_installed = "",
     package_pending = "",
     package_uninstalled = "",
+  },
+
+  lualine = {
+    __1 = "__",
+    __2 = "▁▁",
+    __3 = "▂▂",
+    __4 = "▃▃",
+    __5 = "▄▄",
+    __6 = "▅▅",
+    __7 = "▆▆",
+    __8 = "▇▇",
+    __9 = "██"
   }
 }
