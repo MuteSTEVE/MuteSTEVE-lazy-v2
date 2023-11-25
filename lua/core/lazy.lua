@@ -11,7 +11,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup {
+local lazy_ok, lazy = pcall(require, "lazy")
+if not lazy_ok then
+  return
+end
+
+lazy.setup {
   spec = {
     { import = "plug.git" },
     { import = "plug.syntax" },
