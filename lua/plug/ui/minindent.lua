@@ -1,10 +1,16 @@
 local PLUG = {
   'echasnovski/mini.nvim',
+  lazy = true,
   event = { "BufReadPost", "BufNewFile" },
 }
 
 function PLUG.config()
-  require('mini.indentscope').setup()
+  local mini_ok, mini = pcall(require, "mini.indentscope")
+  if not mini_ok then
+    return
+  end
+
+  mini.setup()
 end
 
 return PLUG

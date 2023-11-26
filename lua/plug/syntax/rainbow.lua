@@ -4,7 +4,10 @@ local PLUG = {
 }
 
 function PLUG.config()
-  local rainbow_delimiters = require 'rainbow-delimiters'
+  local rainbow_delimiters_ok, rainbow_delimiters = pcall(require, "rainbow-delimiters")
+  if not rainbow_delimiters_ok then
+    return
+  end
 
   vim.g.rainbow_delimiters = {
     strategy = {

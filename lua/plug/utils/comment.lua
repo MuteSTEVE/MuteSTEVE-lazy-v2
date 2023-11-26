@@ -1,10 +1,14 @@
 local PLUG = {
   'terrortylor/nvim-comment',
+  lazy = true,
   event = { "BufReadPost", "BufNewFile" }
 }
 
 function PLUG.config()
-  local comment = require("nvim_comment")
+  local comment_ok, comment = pcall(require, 'nvim_comment')
+  if not comment_ok then
+    return
+  end
 
   comment.setup({
     comment_empty = false,

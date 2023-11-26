@@ -6,8 +6,13 @@ local PLUG = {
 }
 
 function PLUG.config()
-  require("nvim-treesitter.configs").setup {
-    ensure_installed = { "java", "bash", "c", "html", "php", "phpdoc", "css", "javascript", "lua", "vim" },
+  local treesitter_ok, treesitter = pcall(require, "nvim-treesitter.configs")
+  if not treesitter_ok then
+    return
+  end
+
+  treesitter.setup {
+    ensure_installed = { "java", "bash", "c", "html", "php", "phpdoc", "css", "javascript", "lua", "vim", "python" },
     sync_install = true,
     highlight = {
       enable = true,

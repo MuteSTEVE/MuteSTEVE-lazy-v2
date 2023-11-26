@@ -1,6 +1,7 @@
 local PLUG = {
   "kdheepak/lazygit.nvim",
   lazy = true,
+  cmd = "LazyGit",
   event = "VeryLazy",
   keys = { "<leader>g", "<cmd>LazyGit<cr>" }
 }

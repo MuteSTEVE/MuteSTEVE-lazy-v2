@@ -11,7 +11,10 @@ local PLUG = {
 }
 
 function PLUG.config()
-  local toggleterm = require("toggleterm")
+  local toggleterm_ok, toggleterm = pcall(require, "toggleterm")
+  if not toggleterm_ok then
+    return
+  end
 
   toggleterm.setup({
   size = 30,

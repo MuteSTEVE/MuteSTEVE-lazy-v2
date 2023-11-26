@@ -32,7 +32,11 @@ function PLUG.config()
   if not icons_ok then
     return
   end
-  require("luasnip/loaders/from_vscode").lazy_load()
+  local snip_ok, snip = pcall(require, "luasnip/loaders/from_vscode")
+  if not snip_ok then
+    return
+  end
+  snip.lazy_load()
 
   local check_backspace = function()
     local col = vim.fn.col "." - 1

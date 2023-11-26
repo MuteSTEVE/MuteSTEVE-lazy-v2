@@ -4,8 +4,10 @@ local PLUG = {
 }
 
 function PLUG.config()
-  local lspconfig = require("lspconfig")
-  local icons = require('core.icons')
+  local lspconfig_ok, lspconfig = pcall(require, "lspconfig")
+  if not lspconfig_ok then
+    return
+  end
 
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -100,6 +102,10 @@ function PLUG.config()
   }
 
   -- Set up signs
+  local icons_ok, icons = pcall(require, 'core.icons')
+  if not icons_ok then
+    return
+  end
   local is = icons.signs
   local signs = { Error = is.Error, Warn = is.Warn, Hint = is.Hint, Info = is.Info }
   for type, icon in pairs(signs) do
