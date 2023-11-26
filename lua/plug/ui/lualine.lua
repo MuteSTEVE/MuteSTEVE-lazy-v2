@@ -51,6 +51,7 @@ function PLUG.config()
       lualine_a = { {'mode', fmt = function(s) return mode_map[s] or s end} },
       lualine_b = {'branch', 'diff', 'diagnostics'},
       lualine_x = {
+        "os.date('%d %b %Y')",
         'encoding',
         'fileformat',
         'filetype',
