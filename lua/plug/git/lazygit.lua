@@ -1,9 +1,9 @@
 local PLUG = {
   "kdheepak/lazygit.nvim",
   lazy = true,
+  keys = { "<leader>g", "<cmd>LazyGit<cr>" },
+  event = { "BufReadPost", "BufNewFile", "VeryLazy" },
   cmd = "LazyGit",
-  event = "VeryLazy",
-  keys = { "<leader>g", "<cmd>LazyGit<cr>" }
 }
 
 function PLUG.config()

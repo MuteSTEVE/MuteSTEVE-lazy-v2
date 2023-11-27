@@ -14,9 +14,9 @@ function PLUG.config()
   vim.o.foldenable = true
 
   vim.keymap.set('n', '=', "<cmd>foldopen<cr>")
-  vim.keymap.set('n', '+', require('ufo').openAllFolds)
+  vim.keymap.set('n', '+', ufo.openAllFolds)
   vim.keymap.set('n', '-', "<cmd>foldclose<cr>")
-  vim.keymap.set('n', '_', require('ufo').closeAllFolds)
+  vim.keymap.set('n', '_', ufo.closeAllFolds)
   vim.keymap.set('n', 'zK', function ()
     local winid = ufo.peekFoldedLinesUnderCursor()
     if not winid then

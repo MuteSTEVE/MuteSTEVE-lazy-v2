@@ -24,25 +24,25 @@ function PLUG.config()
     return chars[index]
   end
 
-  local mode_map = {
-    ['NORMAL'] = ' NORMAL',
-    ['O-PENDING'] = ' 0-PENDING',
-    ['INSERT'] = ' INSERT',
-    ['VISUAL'] = ' VISUAL',
-    ['V-BLOCK'] = ' V-BLOCK',
-    ['V-LINE'] = ' V-LINE',
-    ['V-REPLACE'] = ' V-REPLACE',
-    ['REPLACE'] = ' REPLACE',
-    ['COMMAND'] = ' COMMAND',
-    ['SHELL'] = ' SHELL',
-    ['TERMINAL'] = ' TERMINAL',
-    ['EX'] = ' EX',
-    ['S-BLOCK'] = ' S-BLOCK',
-    ['S-LINE'] = ' S-LINE',
-    ['SELECT'] = ' SELECT',
-    ['CONFIRM'] = ' CONFIRM',
-    ['MORE'] = ' MORE',
-  }
+  -- local mode_map = {
+  --   ['NORMAL'] = ' NORMAL',
+  --   ['O-PENDING'] = ' 0-PENDING',
+  --   ['INSERT'] = ' INSERT',
+  --   ['VISUAL'] = ' VISUAL',
+  --   ['V-BLOCK'] = ' V-BLOCK',
+  --   ['V-LINE'] = ' V-LINE',
+  --   ['V-REPLACE'] = ' V-REPLACE',
+  --   ['REPLACE'] = ' REPLACE',
+  --   ['COMMAND'] = ' COMMAND',
+  --   ['SHELL'] = ' SHELL',
+  --   ['TERMINAL'] = ' TERMINAL',
+  --   ['EX'] = ' EX',
+  --   ['S-BLOCK'] = ' S-BLOCK',
+  --   ['S-LINE'] = ' S-LINE',
+  --   ['SELECT'] = ' SELECT',
+  --   ['CONFIRM'] = ' CONFIRM',
+  --   ['MORE'] = ' MORE',
+  -- }
 
   local is = icons.signs
   lualine.setup {
@@ -54,10 +54,12 @@ function PLUG.config()
       transparent = true,
     },
     sections = {
-      lualine_a = { {'mode', fmt = function(s) return mode_map[s] or s end} },
+      -- lualine_a = { {'mode', fmt = function(s) return mode_map[s] or s end} },
+      lualine_a = { 'filename' },
       lualine_b = {'branch', 'diff', 'diagnostics'},
+      lualine_c = { 'os.date(%)'},
       lualine_x = {
-        "os.date('%d %b %Y')",
+        "os.date('%b %d %Y - %I %M %p')",
         'encoding',
         'fileformat',
         'filetype',

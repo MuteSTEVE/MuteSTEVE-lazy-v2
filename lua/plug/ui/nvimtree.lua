@@ -1,18 +1,25 @@
 local PLUG = {
   'nvim-tree/nvim-tree.lua',
   dependencies = 'kyazdani42/nvim-web-devicons',
-  cmd = "NvimTree",
   lazy = true,
+  event = "VeryLazy",
+  cmd = { "NvimTreeFindFile", "NvimTreeRefresh", "NvimTreeToggle", },
   keys = { "<leader>n", "<cmd>NvimTreeFindFileToggle<cr>" }
 }
 
 function PLUG.config()
-  local nvimtree = require("nvim-tree")
-  local icons = require('core.icons')
+  local nvimtree_ok, nvim_tree = pcall(require, "nvim-tree")
+  if not nvimtree_ok then
+    return
+  end
+  local icons_ok, icons = pcall(require, 'core.icons')
+  if not icons_ok then
+    return
+  end
   local inv = icons.nvimtree
   local igit = icons.git
 
-  nvimtree.setup {
+  nvim_tree.setup {
     disable_netrw = true,
     hijack_netrw = true,
     git = {
